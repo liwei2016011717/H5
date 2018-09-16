@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人信息</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">	
+	</head>
+	<body>
+		<h2>请填写个人信息</h2>
+		<fieldset class="text1">
+			<legend><font color="red" >基本信息</font></legend>
+				<form>
+					姓名&nbsp;<input type="text" name="name" required="required" autofocus="autofocus" placeholder="请输入姓名" />
+					&nbsp;&nbsp;<span style="color: red;">*</span><br/>
+					年龄&nbsp;<input type="number" name="age"  min="1"step="1" placeholder="请输入年龄" />
+				</form>
+		</fieldset>
+		<fieldset class="text2">
+			<legend><font color="red" >你想在哪里收到邮件</font></legend>
+					<form>
+						邮箱&nbsp;<input type="email" list="matchmail" required="required" placeholder="请输入邮箱" id="email"/>
+						&nbsp;&nbsp;<span style="color: red;">*</span>
+						<datalist id="matchmail">
+							<option></option>
+						 	<option>@qq.com</option>
+						    <option>@163.com</option>
+						    <option>@126.com</option>
+						    <option>@yahoo.com.cn</option>
+						    <option>@gmail.com</option>
+						</datalist>
+					</form>
+		</fieldset>
+		<fieldset class="text3">  
+			<legend><font color="red" >收入情况</font></legend>
+				<form>
+					月收入&nbsp;<select>
+						<option>20k+</option>
+						<option>10k+</option>
+						<option>15k+</option>
+						<option>25k+</option>
+						<option>30k+</option>
+					</select><br/>
+					银行卡&nbsp;<input type="text" />
+					有效期&nbsp;<input type="date"/>
+				</form>
+		</fieldset>
+		<fieldset class="text2">
+			<legend><font color="red" >选取提交文件</font></legend>
+				<form>
+					文件&nbsp;<input type="file" value="选择文件"/>
+				</form>
+		</fieldset>
+		<form class="sub">
+			<input type="submit" value="提交" />
+		</form>
+		
+	</body>
+	<script>
+			var email=document.getElementById('email');
+			var matchmail=document.getElementById('matchmail')
+			var opt=matchmail.getElementsByTagName("option");
+			var len=opt.length;
+			//给每一个option绑定一个鼠标的点击事件
+			for(var i=1;i<len;i++){
+				opt[i].onmousedown=function(){
+					email.value=this.textContent;
+					matchmail.style.display='none';
+				}
+			}
+			email.onkeyup=function(){
+				var txt=this.value;
+				var t="";
+				if(txt.indexOf("@")>0){
+					t=txt.substring(txt.indexOf("@"));
+					txt=txt.substring(0,txt.indexOf("@"));
+				}else{
+					t="";
+				}
+				var val="";
+				for(var i=1;i<len;i++){
+					val=opt[i].textContent;
+					val=val.substring(val.indexOf("@"));
+					opt[i].textContent=txt+val;
+				}
+				if(t!=""){
+					var r=new RegExp(t,"i");
+					for(var i=1;i<len;i++){
+						if(r.test(opt[i].textContent)){
+							opt[i].style.display='block';
+						}else{
+							opt[i].style.display='none';
+						}
+					}
+				}
+			}
+		</script>
+</html>
