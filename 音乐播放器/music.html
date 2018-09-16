@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>音乐播放器</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script>
+			function play(){
+				var playbutton = document.getElementById('playaudio');
+				var pausebutton = document.getElementById('pauseaudio');
+				var au=document.getElementById('audio');
+				au.play();
+				playbutton.disabled = true;	
+				pausebutton.disabled = false;
+				
+			}
+			function pause(){
+				var au = document.getElementById('audio');
+				var playbutton = document.getElementById('playaudio');
+				var pausebutton = document.getElementById('pauseaudio');
+				pausebutton.disabled = true;
+				playbutton.disabled = false;
+				au.pause();
+			}
+		</script>
+	</head>
+	<body>
+		<div class="div1">
+			<div class="div2">
+				<input type="button"  value="在线音乐" id="btn" />
+				<input type="button" value="本地音乐" id="btn1"/>
+			</div>
+			<div class="div3">
+				<div id="div4">
+					 &nbsp;&nbsp;&nbsp;千千阙歌   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;<audio src="1.mp3" id="audios"></audio>
+					<input type='button' value="播放" id="playaudio"  onclick = "play()" />
+					<input type="button" value="暂停" id="pauseaudio" disabled="disabled"  onclick = "pause()" />
+				</div>
+				<div class="div5">
+					<audio controls="controls" id="audio">
+	  					<source src="1.mp3" >
+					</audio>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>

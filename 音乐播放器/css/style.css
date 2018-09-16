@@ -1,0 +1,46 @@
+.div1{
+	border:blue  3px solid;
+	width:250px;
+	height: 400px;
+}
+.div2{
+	width: 250px;
+	height: 40px;
+}
+#btn{
+	color: white;
+	font-size: 13px;
+	font-family: '宋体';
+	font-weight: bolder;
+	width: 124px;
+	height: 40px;
+	background: lightblue;
+}
+#btn1{
+	color: white;
+	font-size: 13px;
+	font-family: '宋体';
+	font-weight: bolder;
+	width: 124px;
+	height: 40px;
+	background:black;
+	margin-left: -4px;
+}
+.div3{
+	width: 250px;
+	height: 360px;
+}
+#div4{
+	width: 250px;
+	height: 310px;
+}
+.div5{
+	width: 250px;
+	height: 50px;
+}
+#audio{
+	width: 250px;
+	height: 50px;
+}
+
+
