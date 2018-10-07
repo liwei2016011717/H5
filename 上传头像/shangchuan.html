@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>上传头像</title>
+		<style type="text/css">
+			div{
+				border:2px solid gray;
+				width:180px;
+				height:180px;
+			}
+	</style>
+	</head>
+	<body>
+		<h3>上传头像</h3>
+		<div name="result" id="result"></div>
+	</body>
+	<script>
+		var result=document.getElementById('result');
+		document.ondragover=function(ev){
+			ev.preventDefault();
+		}
+		document.ondrop=function(ev){
+			ev.preventDefault();
+		}
+		result.ondrop=function(ev){
+			var file=ev.dataTransfer.files[0];
+		    if(!/image\/\w+/.test(file.type))
+		    {
+		        alert("请确保文件为图像类型");
+		        return false;
+		    }    
+		    readAsDataURL(file);
+		}
+		 function readAsDataURL(ev) {
+	    		var reader = new FileReader();
+	        	reader.readAsDataURL(ev);
+	        	reader.onload = function(){
+		            result.innerHTML = '<img src="'+this.result+'" alt=""/>'
+	     		}
+    	}
+	</script>
+</html>
