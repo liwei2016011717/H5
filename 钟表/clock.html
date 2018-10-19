@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="600" height="600"></canvas>
+		<script type="text/javascript">
+	     var canvas = document.getElementById('canvas');
+	     var t=canvas.getContext('2d');
+	     function clock(){
+	         t.clearRect(0,0,600,600);
+	         var data = new Date(),
+	         	 s=data.getSeconds(),
+	        	 m=data.getMinutes(),
+	             h=data.getHours();
+	          
+	         t.save();
+	         t.translate(300,300);
+	         
+	         //分钟
+	         for(var i=0;i<60;i++){
+	             t.beginPath();
+	             t.rotate(Math.PI/30);
+	             t.fillRect(-2,-190,3,10)
+	             t.closePath();
+	         }
+	         //时钟
+	         for(var i=0;i<12;i++){ 
+	             t.beginPath();
+	             t.rotate(Math.PI/6); 
+	             t.fillStyle="red";
+	             t.fillRect(-2,-200,5,20)
+	             t.closePath();
+	         }
+	         
+	         //数字
+	         for(var i=1;i<=12;i++){ 
+	             t.beginPath();
+	             t.font='15px solid';
+	             t.fillStyle="black";
+	             t.rotate(Math.PI/6); 
+	             t.fillText(i,-3,-160);
+	             t.closePath();
+	         }
+	         
+	         //圆盘
+	         t.beginPath();
+	         t.strokeStyle = "lightgreen";
+	         t.arc(0,0,200,0,Math.PI*2);
+	         t.lineWidth = 10;
+	         t.stroke();
+	         t.closePath();
+	     
+	     
+	     	  //画分针 
+	         t.beginPath();
+	         t.save();
+	         t.rotate(Math.PI/30*m+Math.PI/30*s/60);
+	         t.fillStyle="pink";
+	      	 t.fillRect(0,0,3,130);
+	         t.restore();
+	         t.closePath();
+	
+	         //画时针
+	         h= h>12?h-12:h;
+	         t.beginPath();
+	         t.save();
+	         t.rotate(Math.PI/6*h+Math.PI/6*m/60+Math.PI/6*s/3600);
+	         t.fillStyle="purple";
+	      	 t.fillRect(0,0,4,100);
+	         t.restore();
+	         t.closePath();
+	         
+	
+	         //画秒针
+	         t.beginPath();
+	         t.save();
+	         t.rotate(Math.PI/30*s);
+			 t.fillStyle="red";
+	         t.fillRect(0,0,1,150)
+	         t.lineJoin="square";
+	         
+	         //画秒针上的中小圆
+	         t.beginPath()
+	         t.strokeStyle="red";
+			 t.arc(0,0,2,0,2*Math.PI);
+			 t.fillStyle='black';
+			 t.closePath();
+			 t.stroke();
+			 t.fill();
+			 
+			  //画秒针上的上小圆
+			 t.beginPath()
+	         t.strokeStyle="red";
+			 t.arc(0,130,2,0,2*Math.PI);
+			 t.fillStyle='black';
+			 t.closePath();
+			 t.stroke();
+			 t.fill();
+	         t.restore();
+	         t.closePath();
+			 
+			 t.restore();
+	     }
+	     clock();
+	     setInterval(clock,100);
+	 </script>
+	</body>
+</html>
+
