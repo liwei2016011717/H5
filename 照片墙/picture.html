@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>照片墙</title>
+		<style>
+			.wall{
+				width: 1300px;
+				height: 778px;
+				background-image: url(images/bg3.JPG);
+				padding: 5px;
+				font-size: 18px;
+				font-family: "宋体";
+			}
+			ul li{
+				float: left;
+				list-style: none;
+				background: white;
+			}
+			ul :nth-child(1){
+				width: 220px;
+				height: 180px;
+			}
+			ul :nth-child(1) img{
+				width: 200px;
+				height: 120px;
+				padding: 10px;
+			}
+			ul :nth-child(1) span{
+				margin-left: 90px;
+			}
+			
+			
+			ul :nth-child(2){
+				width: 142px;
+				height:180px;
+				margin-left: 30px;
+			}
+			ul :nth-child(2) img{
+				width: 122px;
+				height: 120px;
+				padding: 10px;
+			}
+			ul :nth-child(2) span{
+				margin-left: 50px;
+			}
+			
+			
+			ul :nth-child(3){
+				width: 180px;
+				height:180px;
+				margin-left: 39px;
+			}
+			ul :nth-child(3) img{
+				width: 160px;
+				height: 120px;
+				padding: 10px;
+			}
+			ul :nth-child(3) span{
+				margin-left: 70px;
+			}
+			
+			
+			ul :nth-child(4){
+				width: 180px;
+				height:180px;
+				margin-left: 30px;
+			}
+			ul :nth-child(4) img{
+				width: 160px;
+				height: 120px;
+				padding: 10px;
+			}
+			ul :nth-child(4) span{
+				font-size: 18px;
+				margin-left: 70px;
+			}
+			
+			
+			ul :nth-child(5){
+				width: 150px;
+				height:180px;
+				margin-left: 30px;
+			}
+			ul :nth-child(5) img{
+				width: 130px;
+				height: 120px;
+				padding: 10px;
+			}
+			
+			ul :nth-child(5) span{
+				margin-left: 60px;
+			}
+			
+			
+			ul :nth-child(6){
+				width: 180px;
+				height:180px;
+				margin-left: 30px;
+			}
+			ul :nth-child(6) img{
+				width: 160px;
+				height: 120px;
+				padding: 10px;
+			}
+			ul :nth-child(6) span{
+				font-size: 18px;
+				margin-left: 70px;
+			}
+			li:nth-of-type(1){
+				transform:rotate(-3deg);
+			}
+			li:nth-of-type(1):hover{
+				transform: scale(1.2);
+				text-shadow: 5px 5px 5px gray;
+				opacity: 0.8;
+			}
+			li:nth-of-type(2){
+				transform: translateY(-6px);
+			}
+			li:nth-of-type(2):hover{
+				transform:scale(1.2);
+				text-shadow: 5px 5px 6px lightyellow;
+				opacity: 0.8;
+			}
+			li:nth-of-type(3){
+				transform:  translate(-5px,-8px) rotate(-10deg);
+			}
+			li:nth-of-type(3):hover{
+				transform: scale(1.2);
+				text-shadow: 2px 2px 5px pink;
+				opacity: 0.8;
+			}
+			li:nth-of-type(4):hover{
+				transform: scale(1.2);
+				text-shadow: 5px 5px 6px lightyellow;
+				opacity: 0.8;
+			}
+			li:nth-of-type(5){
+				transform:rotate(-3deg);
+			}
+			li:nth-of-type(5):hover{
+				transform: scale(1.2);
+				opacity: 0.8;
+			}
+			li:nth-of-type(6){
+				transform:translate(10px,-2px) rotate(-12deg);
+			}
+			li:nth-of-type(6):hover{
+				transform: scale(1.2);
+				text-shadow: 8px 8px 5px yellowgreen;
+				opacity: 0.8;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wall">
+			<ul>
+				<li>
+					<img src="images/11.jpg" alt="" />
+					<span>相识</span>
+				</li>
+				<li>
+					<img src="images/22.JPG" alt="" />
+					<span>凝视</span>
+				</li>
+				<li>
+					<img src="images/33.JPG" alt="" />
+					<span>甜睡</span>
+				</li>
+				<li>
+					<img src="images/44.JPG" alt="" />
+					<span>逗乐</span>
+				</li>
+				<li>
+					<img src="images/55.JPG" alt="" />
+					<span>奔跑</span>
+				</li>
+				<li>
+					<img src="images/66.JPG" alt="" />
+					<span>漠视</span>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
